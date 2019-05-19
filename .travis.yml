@@ -1,15 +1,12 @@
 sudo: false
 language: node_js
 node_js:
-    - 6.9
+    - 10.15.3
 addons:
-    firefox: "50.0.2"
+    firefox: "latest"
 cache:
   directories:
     - node_modules
-branches:
-  only:
-    - master
 install:
   - npm install
 before_script:
