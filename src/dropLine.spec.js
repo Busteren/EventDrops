@@ -195,7 +195,11 @@ describe('Drop Line', () => {
 
             let textIndex = null;
             let dropsIndex = null;
-            for (let childIndex in lineChildren) {
+            for (
+                let childIndex = 0;
+                childIndex < lineChildren.length;
+                childIndex++
+            ) {
                 const child = lineChildren[childIndex];
                 if (child.classList.contains('drops')) {
                     dropsIndex = +childIndex;
@@ -204,7 +208,6 @@ describe('Drop Line', () => {
 
                 if (child.tagName === 'TEXT') {
                     textIndex = +childIndex;
-                    continue;
                 }
             }
 
@@ -242,17 +245,23 @@ describe('Drop Line', () => {
     });
 
     describe('Drops Container', () => {
-        it('should add a drop container in each drop line container');
-        it('should position it correctly, letting some space for labels');
-        it('should draw drops in it');
+        test.todo('should add a drop container in each drop line container');
+        test.todo(
+            'should position it correctly, letting some space for labels'
+        );
+        test.todo('should draw drops in it');
     });
 
     describe('Metaballs', () => {
-        it('should add metaballs filter on drop container if metaballs is on');
-        it(
+        test.todo(
+            'should add metaballs filter on drop container if metaballs is on'
+        );
+        test.todo(
             'should add a transparent rect with correct dimensions to increase size of drops container if metaballs is on'
         );
-        it('should add neither metaballs filter nor rect if metaballs is off');
+        test.todo(
+            'should add neither metaballs filter nor rect if metaballs is off'
+        );
     });
 
     afterEach(() => {

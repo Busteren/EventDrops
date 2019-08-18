@@ -7,9 +7,9 @@ import defaultConfiguration from './config';
 import dropLine from './dropLine';
 import zoom from './zoom';
 import { addMetaballsDefs } from './metaballs';
+import { withinRange } from './withinRange';
 
 import './style.css';
-import { withinRange } from './withinRange';
 
 // do not export anything else here to keep window.eventDrops as a function
 export default ({

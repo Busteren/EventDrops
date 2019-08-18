@@ -6,9 +6,13 @@ import uglify from 'rollup-plugin-uglify';
 import json from 'rollup-plugin-json';
 
 export default {
-    entry: 'src/index.js',
-    format: 'umd',
-    moduleName: 'eventDrops',
+    input: 'src/index.js',
+    output: {
+        file: 'dist/eventDrops.js',
+        format: 'umd',
+        name: 'eventDrops',
+        sourcemap: true,
+    },
     plugins: [
         json(),
         css({ output: 'dist/style.css' }),
@@ -23,9 +27,7 @@ export default {
         commonjs({
             include: 'node_modules/**',
         }),
-        uglify(),
+        uglify.uglify(),
     ],
     external: ['d3'],
-    dest: 'dist/index.js',
-    sourceMap: true,
 };

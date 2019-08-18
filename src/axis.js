@@ -1,5 +1,3 @@
-import { timeFormat } from 'd3-time-format';
-
 export const tickFormat = (date, formats, d3) => {
     if (d3.timeSecond(date) < date) {
         return d3.timeFormat(formats.milliseconds)(date);
@@ -50,8 +48,7 @@ export default (d3, config, xScale, breakpointLabel) => {
             .tickFormat(d => tickFormat(d, formats, d3))
             .ticks(numberDisplayedTicks[breakpointLabel]);
 
-        axis
-            .enter()
+        axis.enter()
             .filter((_, i) => !i)
             .append('g')
             .classed('axis', true)
